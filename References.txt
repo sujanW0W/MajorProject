@@ -1,0 +1,6 @@
+[1] M. Bapat, H. Gune, and P. Bhattacharyya, “A paradigm-based finite state morphological analyzer for marathi,” in Proceedings of the 1st Workshop on South and Southeast Asian Natural Language Processing (WSSANLP), pp. 26–34, 2010.
+[2] Hayes H. Monson,Statistical Digital Signal Processing and Modeling, John Wiley & Sons Inc. , Toronto, 1996, ISBN 0-471-59431-8 
+[3] Proakis John G., Manolakis Dimitris G.,Digital Signal Processing, principles, algorithms, and applications, Third Edition, Prentice Hall , New Jersey, 1996, ISBN 
+0-13- 394338-9 
+[4] http://www.microsoft.com/MSDN/speech.html, downloaded on 2Oct 2012.
+[5] V.Radha and C. Vimala, “A review on speech recognition challenges and approaches,” doaj. org, vol. 2, no. 1, pp. 1–7, 2012.
