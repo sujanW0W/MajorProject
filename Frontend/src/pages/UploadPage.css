@@ -1,0 +1,142 @@
+.image-back1{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    height: 90vh;
+    width: 95%; 
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.upload-sec{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 700px;
+    left:200px;
+    margin-top:40px ;
+    overflow: hidden;
+    background-color: black;
+    height: auto;
+    width:75%;
+    border-radius: 25px;
+    box-shadow: 0px 0px 2px rgb(185, 185, 255);
+    
+}
+.uploadimage-container{
+    width: 80%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 10px rgb(185, 185, 255);
+    border-radius: 20px;
+    margin-top: 20px;
+    height: auto;
+    margin-bottom:5px;    
+}
+
+.inner-upload-container{  
+    height:50px;
+    width: 50px;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.sub-container21{
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    align-items: center;
+    background: black;
+    margin-top: 260px;
+}
+
+.sub-text1{
+    height: 30px;
+    width: 30px;
+}
+.grid-view1{
+    display: flex;
+    gap: 10px;
+    margin-top: 150px;
+
+}
+
+.Video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+    width: 75%;
+    background-color: white;
+    border-radius: 20px;
+   
+}
+
+
+.upload-btn{
+    border:none;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+.upload-btn:hover{
+    transform: scale(1.5);
+}
+
+.input-file{
+    display:  none;
+}
+
+.show_content{
+    margin-top:30px ;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  
+    gap: 400px;
+    padding:10px;
+    
+}
+.show_imgcontent{
+    height: 80px;
+    width:120px;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    margin-bottom: 10px;
+
+}
+.show_imgcontent:hover{
+    transform: scale(1.2);
+    
+}
+.btn-content{
+    width: 200px;
+    height: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn-innercontent{
+    height: 35px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(47, 102, 255);
+    font-weight: bolder;
+    color: white;
+    transition: 0.3s;
+}
+.btn-innercontent:hover{
+    margin-bottom: 20px;
+}
+.btn-innercontent:active{
+    background: linear-gradient(to right,rgb(66, 19, 251), rgb(27, 206, 255))
+}
