@@ -1,0 +1,84 @@
+.ab-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+   
+}
+.ab-innerContainer1{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:#0e1118;
+    color: white;
+    padding-top:100px ;
+}
+.grid-view25{
+    display: flex;
+    margin-top: 100px;
+    gap:30px;
+    width:100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.card2-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width:25vw;
+ 
+    color: white;
+    border-radius: 20px;
+}
+
+.ab-innerContainer2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e1118;
+    padding-top: 250px;
+    color: rgb(196, 196, 196);   
+}
+
+.ab-inner{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin-top: 100px;
+
+}
+.ab-innerDiv{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 30%;
+    gap:50px;
+
+}
+.ab-subinnerDiv{
+    display: flex;
+    gap: 20px;
+}
+.seq-img{
+    height: 50px;
+    width: 50px;
+}
+
+.ab-lastcontainer{
+    background-color: #0e1118;
+    padding-top:50px;
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+}

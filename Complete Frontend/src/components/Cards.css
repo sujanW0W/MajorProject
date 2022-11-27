@@ -1,0 +1,127 @@
+.cards-main{
+   background-color: white;
+   border: none;
+   outline:none;
+   border-radius: 7px;
+   z-index: 7;
+
+}
+.cards-main:hover{
+    opacity: 1;
+
+}
+
+.cards-submain{
+    
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 270px;
+ 
+}
+.image-container{
+    border-radius: 4px;
+   position: relative;
+    height: 270px;
+    width: 270px;
+    overflow: hidden;
+}
+
+
+.image-container .before{
+    top:0;
+   position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+ 
+ 
+    
+}
+.image-container .before .after{
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width:135px;
+    height:100%;
+    z-index: 2;
+    background-size:cover ;
+    background-position: center;
+   
+
+}
+
+.image-container input{
+    position: absolute;
+    left:0px;
+    top:0px;
+    -webkit-appearance:none;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+ 
+}
+.image-container input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    display: block;
+    width: 3px;
+    height: 270px;
+    border: 1px solid #f5f5f5;
+    background: #5b83dc;
+    cursor: pointer;
+}
+.image-container input::-webkit-slider-thumb:active{
+    background: #e25a5a;
+    border:1px solid #e25a5a;
+    transition:all 300ms ease-in-out;
+}
+
+
+.des-container{
+    padding:20px 0 0 40px;
+
+}
+.des-container h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+   
+}
+.des-container p{
+    margin-top: 3px;
+    line-height: 35px;
+    font-weight: bolder;
+    word-spacing: 3px;
+    color: rgb(96, 96, 96);
+}
+.cards_button{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    
+    
+}
+.cards_button button{
+    width:100%;
+    border-radius: 6px;
+    border: none;
+    background:rgb(66, 19, 251);
+    font-size: 15px;
+    color: white;
+    transition: transform 0.3s;
+  
+}
+.cards_button button:hover{
+    transform: scale(1.1);
+    background-image: linear-gradient(to right,rgb(66, 19, 251), rgb(27, 206, 255));
+    opacity:.9;
+    
+}
+
+/* .image-container:hover{
+    transform: scale(1.1);
+} */
