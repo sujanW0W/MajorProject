@@ -21,7 +21,7 @@
 }
 .image-container{
     border-radius: 4px;
-   position: relative;
+    position: relative;
     height: 270px;
     width: 270px;
     overflow: hidden;
@@ -79,10 +79,14 @@
 
 
 .des-container{
+
     padding:20px 0 0 40px;
+    text-align: center;
 
 }
 .des-container h1{
+    text-align: center;
+    margin-right: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 22px;
     font-weight: 900;

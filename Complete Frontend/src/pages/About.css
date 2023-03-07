@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     color: white;
+    text-align: center;
    
 }
 .ab-innerContainer1{
@@ -16,6 +17,7 @@
     background:#0e1118;
     color: white;
     padding-top:100px ;
+    text-align: center;
 }
 .grid-view25{
     display: flex;
@@ -48,6 +50,7 @@
     background-color: #0e1118;
     padding-top: 250px;
     color: rgb(196, 196, 196);   
+    text-align: center;
 }
 
 .ab-inner{

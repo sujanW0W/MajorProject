@@ -24,7 +24,10 @@
     width: 100%; 
     top:25vw; 
     align-items: center;
+    text-align: center;
     background-size: cover;
+    background-position: center center;
+    
   
 }
 .inner-image-back{
@@ -53,8 +56,10 @@ h3{
     font-weight: 900;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    
+   
 }
 .cards{
+    width: 80%;;
     border: none;
     position: absolute;
     top: 700px;
@@ -69,7 +74,7 @@ h3{
 
 .sub-container2{
     margin-top: 400px;
-    
+    text-align: center;
     display: flex;
     flex-direction: column;
     height: 700px;
@@ -217,4 +222,8 @@ h3{
     gap: 30px;
 }
 
+@media only screen and (max-width:414px){
 
+  
+
+}
