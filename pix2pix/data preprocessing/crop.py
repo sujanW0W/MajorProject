@@ -2,14 +2,17 @@ from math import floor
 from PIL import Image
 import os
 from random import randint
+from os import makedirs
 
+
+makedirs("D:\\Dataset\\part10_new_cropped", exist_ok=True)
 
 img_id = 0 
 
-listing = os.listdir("C:\\Users\\Shady\\Downloads\\Compressed\\part9_new\\")    
+listing = os.listdir("D:\\Dataset\\part10_new\\")    
 
 for file in listing:
-    img = Image.open(f"C:\\Users\\Shady\\Downloads\\Compressed\\part9_new\\{img_id}.jpg").convert('RGB') 
+    img = Image.open(f"D:\\Dataset\\part10_new\\{img_id}.jpg").convert('RGB') 
  
     # Size of the image in pixels
     width, height = img.size
@@ -22,5 +25,5 @@ for file in listing:
     
     img_cropped = img.crop((left, top, right, bottom))
 
-    img_cropped.save(f"C:/Users/Shady/Downloads/Compressed/part9_new_cropped/{img_id}.jpg")  
+    img_cropped.save(f"D:\\Dataset\\part10_new_cropped/{img_id}.jpg")  
     img_id += 1

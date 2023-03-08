@@ -3,6 +3,7 @@ scipy
 pandas
 matplotlib
 scikit-learn
+scikit-image
 torch 
 keras
-tensorflow
+tensorflow<2.11

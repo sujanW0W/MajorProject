@@ -15,19 +15,18 @@ def load_images(path, size=(256,512)):
 		pixels = load_img(path + filename, target_size=size)
 		# convert to numpy array
 		pixels = img_to_array(pixels)
-		# split into satellite and map
-		sat_img, map_img = pixels[:, :256], pixels[:, 256:]
-		src_list.append(map_img)
-		tar_list.append(sat_img)
+		# split into source and target images
+		src_img, tar_img = pixels[:, :256], pixels[:, 256:]
+		src_list.append(src_img)
+		tar_list.append(tar_img)
 	return [asarray(src_list), asarray(tar_list)]
 
 # dataset path
-# path = 'C:\\Users\Shady\Desktop\pix2pix\\alley_new\\train\\'
-path = "C:\\Users\\Shady\\Desktop\\pix2pix\\Data\\"
+path = "C:\\Users\\Shady\\Desktop\\pix2pix\\Data_Test\\"
 # load dataset
 [src_images, tar_images] = load_images(path)
 print('Loaded: ', src_images.shape, tar_images.shape)
 # save as compressed numpy array
-filename = 'streetview_256.npz'
+filename = 'streetview_256_test.npz'
 savez_compressed(filename, src_images, tar_images)
 print('Saved dataset: ', filename)

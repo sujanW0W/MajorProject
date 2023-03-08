@@ -10,7 +10,7 @@ def load_real_samples(filename):
 	# load compressed arrays
 	data = load(filename)
 	# unpack arrays
-	X1, X2 = data['arr_0'], data['arr_1']
+	X2, X1 = data['arr_0'], data['arr_1']
 	# scale from [0,255] to [-1,1]
 	X1 = (X1 - 127.5) / 127.5
 	X2 = (X2 - 127.5) / 127.5
@@ -35,10 +35,10 @@ def plot_images(src_img, gen_img, tar_img):
 	pyplot.show()
 
 # load dataset
-[X1, X2] = load_real_samples('part10_256.npz')
+[X1, X2] = load_real_samples('streetview_256_1k.npz')
 print('Loaded', X1.shape, X2.shape)
 # load model
-model = load_model('models/streetview/model_044400.h5')
+model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Data_256_bs4_ep60\\models\\model_102480')
 # select random example
 ix = randint(0, len(X1), 1)
 src_image, tar_image = X1[ix], X2[ix]

@@ -22,21 +22,31 @@ def load_image(filename, size=(256,256)):
 	return pixels
 
 # #save resized image
-# img = Image.open("C:\\Users\\Shady\\Desktop\\test_new.png")
+# img = Image.open("C:\\Users\\Shady\\Desktop\\pix2pix\\test.jpg")
 # width, height = img.size
 
 # img = img.resize((256, 256), Image.Resampling.LANCZOS)
-# img.save('C:\\Users\\Shady\\Desktop\\test.png')
+# img.save('C:\\Users\\Shady\\Desktop\\pix2pix\\test_256.jpg')
 
 # load source image
-src_image = load_image('C:\\Users\\Shady\\Desktop\\test24.jpg')
-# src_image = load_image('maskalley/19.jpg')
+src_image = load_image('C:\\Users\\Shady\\Desktop\\test.jpg')
+print(type(src_image))
 print('Loaded', src_image.shape)
 
 # load model
-model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\models\\streetview\\model_044400.h5')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep60\\models\\model_025620')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep60\\models\\model_051240')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep60\\models\\model_076860')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep60\\models\\model_102480')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep60\\models\\model_128100')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep60\\models\\model_153720')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep40_final\\models\\model_025620')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep40_final\\models\\model_051240')
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_bs4_ep40_final\\models\\model_076860')
 
-print(model.output_shape[1])
+# model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_5k_part1_bs4_ep100\\models\\model_125000')
+model = load_model('C:\\Users\\Shady\\Desktop\\pix2pix\\Results\\Data_256_5k_part2_bs4_ep100\\models\\model_131200')
+
 
 # generate image from source
 gen_image = model.predict(src_image)
@@ -54,7 +64,3 @@ image.imsave('C:\\Users\\Shady\\Desktop\\result.png', gen_image[0])
 pyplot.imshow(gen_image[0])
 pyplot.axis('off')
 pyplot.show()
-
-
-
-
