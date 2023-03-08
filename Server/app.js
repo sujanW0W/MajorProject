@@ -25,9 +25,9 @@ app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 
-const start = () => {
+const start = async () => {
     try {
-        connectDB(process.env.MONGO_URI)
+        await connectDB(process.env.MONGO_URI)
 
         app.listen(PORT, () => {
             console.log(`Server is listening on PORT ${PORT}`)

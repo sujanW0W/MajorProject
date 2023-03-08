@@ -12,7 +12,7 @@ const auth = async (req, res, next) => {
     const token = authString.split(" ")[1]
 
     const verifyToken = await jwt.verify(token, process.env.JWT_SECRET)
-
+    req.user = verifyToken
     next()
 }
 
