@@ -1,6 +1,6 @@
-const mongoose = require("mongoose")
-const bcrypt = require("bcryptjs")
-const jwt = require("jsonwebtoken")
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const userSchema = mongoose.Schema({
     fullName: {
@@ -29,17 +29,23 @@ const userSchema = mongoose.Schema({
         required: [true, "Password must be provided."],
         minLength: [6, "Password must be at least 6 characters long."],
     },
-})
+    phoneNumber: {
+        type: Number,
+        required: true,
+        min: 9000000000,
+        max: 9999999999,
+    },
+});
 
 userSchema.pre("save", async function () {
-    const salt = await bcrypt.genSalt(10)
-    this.password = await bcrypt.hash(this.password, salt)
-})
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+});
 
 userSchema.methods.comparePassword = async function (password) {
-    const isMatch = await bcrypt.compare(password, this.password)
-    return isMatch
-}
+    const isMatch = await bcrypt.compare(password, this.password);
+    return isMatch;
+};
 
 userSchema.methods.generateToken = async function () {
     const token = await jwt.sign(
@@ -51,8 +57,8 @@ userSchema.methods.generateToken = async function () {
         },
         process.env.JWT_SECRET,
         { expiresIn: process.env.JWT_LIFETIME }
-    )
-    return token
-}
+    );
+    return token;
+};
 
-module.exports = mongoose.model("Users", userSchema)
+module.exports = mongoose.model("Users", userSchema);

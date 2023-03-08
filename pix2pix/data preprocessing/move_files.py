@@ -1,11 +1,15 @@
 import glob
 import os
 import shutil
+from os import makedirs
 
-src_folder = r"C:\Users\Shady\Downloads\Compressed\part9"
-dst_folder = r"C:\Users\Shady\Downloads\Compressed\part9_new\\"
 
-# move file whose name starts with string 'emp'
+makedirs("D:\\Dataset\\part10_new", exist_ok=True)
+
+src_folder = r"D:\\Dataset\\part10"
+dst_folder = r"D:\\Dataset\\part10_new\\"
+
+# move file whose name starts with string '*_1.jpg'
 pattern = src_folder + "\*_1.jpg"
 for file in glob.iglob(pattern, recursive=True):
     # extract file name form file path
