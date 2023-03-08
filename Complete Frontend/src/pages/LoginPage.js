@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 import { UserContext } from "../components/UserContext";
 
 import "./LoginPage.css";
@@ -7,8 +8,53 @@ const LoginPage = () => {
     const navigate = useNavigate();
 
     const { User, setUser } = useContext(UserContext);
-    const [newUsername, setUsername] = useState();
-    const [newPassword, setPassword] = useState();
+    const [newUsername, setUsername] = useState("");
+    const [newPassword, setPassword] = useState("");
+
+    const getApi = async () => {
+        const response = await fetch(
+            "http://localhost:5000/api/v1/users/login",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    userName: newUsername,
+                    password: newPassword,
+                }),
+            }
+        );
+        const result = await response.json();
+        if (result.token) {
+            alert("login sucessful");
+            // window.location.href='/dashboard'
+            navigate("/dashboard");
+        } else {
+            alert("Login unsuccessful, Try again !!");
+        }
+    };
+
+    const getAdminApi = async () => {
+        const response = await fetch("http://localhost:3500/api_login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                newUsername,
+                newPassword,
+            }),
+        });
+        const result = await response.json();
+        if (result.user) {
+            alert("login sucessful");
+            // window.location.href='/dashboard'
+            navigate("/Admin");
+        } else {
+            alert("Login unsuccessful, Try again !!");
+        }
+    };
 
     const takevalue = () => {
         return {
@@ -29,18 +75,31 @@ const LoginPage = () => {
         event.preventDefault();
         const Datas = takevalue();
         setUser(Datas);
-        setUser(true);
+        getApi();
+
         console.log(Datas);
         setPassword("");
         setUsername("");
-        navigate("/");
     };
+
+    const adminsubmithandler = async (event) => {
+        event.preventDefault();
+        const Datas = takevalue();
+        setUser(Datas);
+        setUser(true);
+        getAdminApi();
+        console.log(Datas);
+        // navigate('/admin')
+        setPassword("");
+        setUsername("");
+    };
+    console.log(User);
 
     return (
         <div>
             <div className="lomain-container">
                 <div className="losubmain-container">
-                    <img src="img/cologo.png"></img>
+                    <img src="images/logo.png"></img>
                 </div>
                 <h1
                     style={{
@@ -83,10 +142,25 @@ const LoginPage = () => {
                                 value={newPassword}
                             />
                         </div>
-                        <div className="pass">Forget The Password?</div>
-                        <button className="lo-sub" type="submit">
+                        <div className="pass"></div>
+                        <button
+                            className="lo-sub"
+                            onClick={submithandler}
+                            type="submit"
+                        >
                             Sign In
                         </button>
+                        <button
+                            className="lo-sub"
+                            onClick={adminsubmithandler}
+                            type="submit"
+                        >
+                            Sign in as Admin
+                        </button>
+                        <p style={{ color: "#000", marginTop: "40px" }}>
+                            Don't have an account?{" "}
+                            <Link to={"/registration"}>Create an account</Link>
+                        </p>
                     </form>
                 </div>
             </div>

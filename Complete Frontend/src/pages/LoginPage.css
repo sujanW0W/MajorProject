@@ -57,6 +57,7 @@
 .text_feild{
     position: relative;
     border-bottom: 2px solid;
+    width: 100%;
   
 }
 .text_feild input{

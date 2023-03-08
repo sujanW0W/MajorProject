@@ -1,11 +1,8 @@
-
-import React, { useEffect, useState } from 'react'
-import './LoginPage.css'
-import { Link, useNavigate } from 'react-router-dom';
-import { useFormik } from 'formik';
-import { schema } from '../components/validationSchema';
-
-
+import React, { useEffect, useState } from "react";
+import "./LoginPage.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import { schema } from "../components/validationSchema";
 
 const initialValues = {
     fullname: "",
@@ -16,94 +13,53 @@ const initialValues = {
 };
 
 export const RegistrationPage = () => {
+    const [userDetail, setuserDetail] = useState("");
     const navigate = useNavigate();
+
     let array = ""; // You cannot assign values to const variables once it is declared. So dont use const ....
     const { errors, handleBlur, handleChange, handleSubmit, values } =
         useFormik({
             initialValues: initialValues,
             validationSchema: schema,
             onSubmit: () => {
+                setuserDetail(values);
                 array = {
                     ...values,
-                    gender: gender1,
                 };
-                console.log(array);
-
+                postData();
                 navigate("/login");
-                // console.log(array)
             },
         });
-    const [gender1, setgender] = useState();
-
-    const clickhandler = (event) => {
-        setgender(event.target.value);
-    };
-    console.log(errors);
-    const [gender1, setgender] = useState("")
-    const [userDetail, setuserDetail] = useState("")
-    const navigate = useNavigate()
-
- 
-    let array = ''; // You cannot assign values to const variables once it is declared. So dont use const ....
-    const { errors, handleBlur, handleChange, handleSubmit, values } = useFormik({
-        initialValues: initialValues,
-        validationSchema: schema,
-        onSubmit:() => {
-
-            
-            setuserDetail(values);
-            array = {
-                ...values,
-                gender: gender1
+    const postData = async () => {
+        const response = await fetch(
+            "http://localhost:5000/api/v1/users/register",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json", //it is necessary to specify the type like binary, URL, JSON etc
+                },
+                body: JSON.stringify({
+                    fullName: fullname,
+                    userName: username,
+                    email,
+                    password,
+                    phoneNumber: phone,
+                }),
             }
-            postData();
-            navigate('/login')
-          
-
-        }
-    })
-    const postData= async ()=>{
-        const response = await fetch('http://localhost:3500/api_register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json' //it is necessary to specify the type like binary, URL, JSON etc
-            },
-            body: JSON.stringify(
-               {
-                   fullname,
-                   username,
-                   email,
-                   password,
-                   phone
-               
-               }
-            )
-        })
+        );
         const data = await response.json();
-        if(data.status==='ok')
-        {
-            navigate=navigate('login')
+        if (data.status === "ok") {
+            navigate("/");
         }
-        console.log(data)
+    };
 
-    }
-
-    const clickhandler = (event) => {
-        setgender(event.target.value)
-    }
-     const{fullname, username,email,password,phone}=values
-
-
-
+    const { fullname, username, email, password, phone } = values;
 
     return (
         <div>
             <div className="lomain-container">
                 <div className="losubmain-container">
-                    <img src="img/cologo.png" alt="NA" />
-            <div className='lomain-container'>
-                <div className='losubmain-container'>
-                    <img src='images/logo.png'></img>
+                    <img src="images/logo.png" alt="NA" />
                 </div>
                 <h1
                     style={{
@@ -229,35 +185,7 @@ export const RegistrationPage = () => {
                                 </p>
                             }
                         </div>
-                        <div className="radio-btn">
-                            <div className="head">Gender</div>
-                            <div className="radio-flex">
-                                <input
-                                    type="radio"
-                                    id="male"
-                                    name="gender"
-                                    value="male"
-                                    onClick={clickhandler}
-                                ></input>{" "}
-                                <label htmlFor="male">Male</label>
-                                <input
-                                    type="radio"
-                                    id="female"
-                                    name="gender"
-                                    value="female"
-                                    onClick={clickhandler}
-                                ></input>{" "}
-                                <label htmlFor="female">Female</label>
-                                <input
-                                    type="radio"
-                                    id="others"
-                                    name="gender"
-                                    value="others"
-                                    onClick={clickhandler}
-                                ></input>{" "}
-                                <label htmlFor="others">Others</label>
-                            </div>
-                        </div>
+
                         <button
                             className="lo-sub"
                             style={{ marginTop: "10px", marginBottom: "10px" }}
