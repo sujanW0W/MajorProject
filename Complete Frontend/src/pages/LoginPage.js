@@ -87,10 +87,6 @@ const LoginPage = () => {
                         <button className="lo-sub" type="submit">
                             Sign In
                         </button>
-                        <p style={{ color: "#000", marginTop: "40px" }}>
-                            Don't have an account?{" "}
-                            <Link to={"/registration"}>Create an account</Link>
-                        </p>
                     </form>
                 </div>
             </div>

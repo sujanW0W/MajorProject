@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import "./LoginPage.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useFormik } from "formik";
-import { schema } from "../components/validationSchema";
 
-import axios from "axios";
+import React, { useEffect, useState } from 'react'
+import './LoginPage.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { useFormik } from 'formik';
+import { schema } from '../components/validationSchema';
+
+
 
 const initialValues = {
     fullname: "",
@@ -38,12 +39,71 @@ export const RegistrationPage = () => {
         setgender(event.target.value);
     };
     console.log(errors);
+    const [gender1, setgender] = useState("")
+    const [userDetail, setuserDetail] = useState("")
+    const navigate = useNavigate()
+
+ 
+    let array = ''; // You cannot assign values to const variables once it is declared. So dont use const ....
+    const { errors, handleBlur, handleChange, handleSubmit, values } = useFormik({
+        initialValues: initialValues,
+        validationSchema: schema,
+        onSubmit:() => {
+
+            
+            setuserDetail(values);
+            array = {
+                ...values,
+                gender: gender1
+            }
+            postData();
+            navigate('/login')
+          
+
+        }
+    })
+    const postData= async ()=>{
+        const response = await fetch('http://localhost:3500/api_register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' //it is necessary to specify the type like binary, URL, JSON etc
+            },
+            body: JSON.stringify(
+               {
+                   fullname,
+                   username,
+                   email,
+                   password,
+                   phone
+               
+               }
+            )
+        })
+        const data = await response.json();
+        if(data.status==='ok')
+        {
+            navigate=navigate('login')
+        }
+        console.log(data)
+
+    }
+
+    const clickhandler = (event) => {
+        setgender(event.target.value)
+    }
+     const{fullname, username,email,password,phone}=values
+
+
+
 
     return (
         <div>
             <div className="lomain-container">
                 <div className="losubmain-container">
                     <img src="img/cologo.png" alt="NA" />
+            <div className='lomain-container'>
+                <div className='losubmain-container'>
+                    <img src='images/logo.png'></img>
                 </div>
                 <h1
                     style={{
