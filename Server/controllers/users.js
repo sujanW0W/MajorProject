@@ -14,7 +14,7 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
     const { userName, password } = req.body;
-
+    console.log(req.body);
     //Check if the entered field is valid?
     if (!userName || !password)
         throw new BadRequest("Please provide Valid username and password.");

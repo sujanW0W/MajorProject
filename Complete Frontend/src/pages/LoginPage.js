@@ -1,90 +1,101 @@
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../components/UserContext";
 
-import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { UserContext} from '../components/UserContext';
-
-
-
-import './LoginPage.css';
+import "./LoginPage.css";
 const LoginPage = () => {
-
     const navigate = useNavigate();
 
-    const { User, setUser } = useContext(UserContext)
+    const { User, setUser } = useContext(UserContext);
     const [newUsername, setUsername] = useState();
     const [newPassword, setPassword] = useState();
-    
-
 
     const takevalue = () => {
-        return (
-            {
-                username: newUsername,
-                password: newPassword
-
-            }
-        )
-
-    }
+        return {
+            username: newUsername,
+            password: newPassword,
+        };
+    };
 
     const titilechanger = (event) => {
-        setUsername(event.target.value)
-    }
+        setUsername(event.target.value);
+    };
 
     const passwordchanger = (event) => {
-        setPassword(event.target.value)
-    }
-
+        setPassword(event.target.value);
+    };
 
     const submithandler = async (event) => {
-
-        event.preventDefault()
+        event.preventDefault();
         const Datas = takevalue();
-        setUser(Datas)
-        setUser(true)
+        setUser(Datas);
+        setUser(true);
         console.log(Datas);
-        setPassword('')
-        setUsername("")
-        navigate('/')
-
-    }
-   
-
+        setPassword("");
+        setUsername("");
+        navigate("/");
+    };
 
     return (
         <div>
-            <div className='lomain-container'>
-                <div className='losubmain-container'>
-                    <img src='img/cologo.png'></img>
+            <div className="lomain-container">
+                <div className="losubmain-container">
+                    <img src="img/cologo.png"></img>
                 </div>
-                <h1 style={{fontSize:"4vw", color:"white",fontWeight:"700", marginTop:"100px"}}>Login</h1>
-                <p style={{color:"white",fontSize:"20px", wordSpacing:"2px", padding:"7px"}}>Sign in here to get started.</p>
+                <h1
+                    style={{
+                        fontSize: "4vw",
+                        color: "white",
+                        fontWeight: "700",
+                        marginTop: "100px",
+                    }}
+                >
+                    Login
+                </h1>
+                <p
+                    style={{
+                        color: "white",
+                        fontSize: "20px",
+                        wordSpacing: "2px",
+                        padding: "7px",
+                    }}
+                >
+                    Sign in here to get started.
+                </p>
 
                 <div className="lo-main">
-                    <form className='form_feild' onSubmit={submithandler}>
-                        <div className='text_feild'>
-                            <label >Username</label>
+                    <form className="form_feild" onSubmit={submithandler}>
+                        <div className="text_feild">
+                            <label>Username</label>
                             <span></span>
-                            <input type="text" onChange={titilechanger} value={newUsername}></input>
-
+                            <input
+                                type="text"
+                                onChange={titilechanger}
+                                value={newUsername}
+                            ></input>
                         </div>
-                        <div className='text_feild'>
+                        <div className="text_feild">
                             <label>Password</label>
                             <span></span>
-                            <input type="password" onChange={passwordchanger} value={newPassword} />
+                            <input
+                                type="password"
+                                onChange={passwordchanger}
+                                value={newPassword}
+                            />
                         </div>
-                        <div className='pass'>Forget The Password?</div>
-                         <button className="lo-sub"  type='submit'>Sign In</button>
-
+                        <div className="pass">Forget The Password?</div>
+                        <button className="lo-sub" type="submit">
+                            Sign In
+                        </button>
+                        <p style={{ color: "#000", marginTop: "40px" }}>
+                            Don't have an account?{" "}
+                            <Link to={"/registration"}>Create an account</Link>
+                        </p>
                     </form>
-
                 </div>
-                <p style={{color:"white", marginTop:"400px"}}>Don't have an account? <Link to={'/registration'}>Create an account</Link></p>
             </div>
         </div>
-
-
-    )
-}
+    );
+};
 
 export default LoginPage;
