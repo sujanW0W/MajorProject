@@ -7,6 +7,7 @@
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
+    text-align: center;
 }
 
 .upload-sec{
@@ -62,8 +63,10 @@
 }
 .grid-view1{
     display: flex;
-    gap: 10px;
+    gap: 2px;
     margin-top: 150px;
+    padding-left:25px ;
+  
 
 }
 

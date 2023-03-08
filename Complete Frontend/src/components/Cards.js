@@ -21,7 +21,7 @@ export const Cards = (props) => {
         <div className='des-container'>
           <h1>{props.title}
           </h1>
-          <p>{props.des}</p>
+          <p style={{marginRight:'30px'}}>{props.des}</p>
           <div className='cards_button'>
             <button onClick={()=>{navigate('/Upload')}}>Colorize Photo Now </button>
           </div>

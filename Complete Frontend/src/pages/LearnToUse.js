@@ -86,7 +86,7 @@ export const LearnToUse = () => {
                         <div className='upsub-innercontainer'>
                             <h1 style={{ fontWeight: "900", color: 'black', marginTop: "50px", color: "white" }}>Picture Colorizer</h1>
                             <p style={{ width: "40%", height: "100px", lineHeightStep: "400px", fontSize: "18px", wordSpacing: "3px", marginTop: "30px", color: "white", textAlign: "center" }}> Picture Colorizer is a Windows and Mac application used for B&W photo colorization and old photo restoration. Allows users to adjust various parameters of the photo and apply filters. Register to remove watermark.</p>
-                            <Rating name="read-only" value={5} readOnly style={{ marginTop: "20px", }} />
+                            <Rating name="read-only" value={5} readOnly style={{ marginTop: "20px", width:"150px"}} />
                         </div>
 
                         <button className='l-btn'><h1>Soon Lunching For Mac And Win</h1></button>

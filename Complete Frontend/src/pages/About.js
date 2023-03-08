@@ -81,7 +81,7 @@ export const About = () => {
                         </h1>
                         <p style={{ width: "50%", height: "100px", lineHeightStep: "500px", fontSize: "18px", wordSpacing: "3px", marginTop: "30px", color: "white", textAlign: "center" }}>Looking for the best picture colorizer application to restore old photo on phones? Try our online Application  - "Colorize!" and colourize your old black and white pictures instantly. No Photoshop skills required and it is easiest way to neutralize the color for beginners. Download restore and enhanced and use it for 100% free!
                         </p>
-                        <Rating name="read-only" value={5} readOnly style={{ marginTop: "20px", }} />
+                        <Rating name="read-only" value={5} readOnly style={{ marginTop: "20px", width:'150px'}} />
 
                     </div>
                 </div>

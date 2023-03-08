@@ -3,11 +3,15 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    width: auto;
 }
 
 body{
     font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
+    background: black;
+    width: 100%;
+    
 
 
 }
@@ -15,9 +19,6 @@ body{
     width:100%;
     margin: auto;
     background: transparent;
-
-
-  
     }
 
 .flex{
@@ -27,7 +28,9 @@ body{
 
 
 ul{
+
     list-style: none;
+    height: 100px;
 }
 a{
     text-decoration: none;
@@ -36,6 +39,7 @@ a{
 header{
     padding: 20px 0;
     background:transparent;
+    height: 100px;
    
 }
 
@@ -46,6 +50,7 @@ header ul{
 header ul li{
 
     display: inline-block;
+    width: 150px;
     margin-left :30px ;
     margin-top: 15px;
     
@@ -111,7 +116,7 @@ header.active{
     .nav-links-bar{
         position: absolute;
         display: block;
-        background-color: black;
+        background-color: blue;
         top:90px;
         left: 75px;
         transition: 0.5s;
@@ -135,7 +140,7 @@ header.active{
     .nvabar-items-icon{
         display: block;
         position: absolute;
-        right:30px;
+        right:100px;
         top: 30px;
         color: #fff;
 
@@ -169,3 +174,10 @@ header.active{
     background-image: linear-gradient(to right,rgb(66, 19, 251), rgb(27, 206, 255));
     color: white;
 }
+ @media only screen and (max-width: 414px){
+     .body{
+         width: 100%;
+     }
+     
+ 
+ }
