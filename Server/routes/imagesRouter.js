@@ -1,10 +1,13 @@
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-const { uploadImage, getImage } = require("../controllers/images")
+const { uploadImage, getImage } = require("../controllers/images");
+const restoreImage = require("../controllers/restoreImage");
 
-router.post("/", uploadImage)
+router.post("/", uploadImage);
 
-router.get("/:name", getImage)
+router.get("/:name", getImage);
 
-module.exports = router
+router.post("/restoration", restoreImage);
+
+module.exports = router;

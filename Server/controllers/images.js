@@ -3,11 +3,11 @@ const { StatusCodes } = require("http-status-codes");
 const multer = require("multer");
 const path = require("path");
 
+const suffix = Date.now() + "-" + Math.floor(Math.random() * 10000);
 const Storage = multer.diskStorage({
     destination: "uploads",
     filename: (req, file, cb) => {
-        // const suffix = Date.now() + "-" + Math.floor(Math.random() * 10000)
-        cb(null, file.originalname);
+        cb(null, `${suffix}-${file.originalname}`);
     },
 });
 
