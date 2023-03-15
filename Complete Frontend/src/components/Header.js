@@ -7,22 +7,29 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
+
 const Header = () => {
 
     const navigator=useNavigate();
     const [sidebar, setsidebar]=useState(false)
     const {User, setUser }= useContext(UserContext)
-    console.log(User);
+    // console.log(User);
 
-    window.addEventListener("scroll", function(){
-        const header= document.querySelector('.header')
-        header.classList.toggle("active",window.screenY>200)
-    })
+    // window.addEventListener("scroll", function(){
+    //     const header= document.querySelector('.header')
+    //     header.classList.toggle("active",window.screenY>200)
+    // })
+
+  
+    
 
     const logOuthandler=()=>{
-        navigator('/')
+
+        const removeToken=localStorage.removeItem('token')
+        navigator('/login')
         setUser(null)
         setUser(false)
+        console.log(removeToken)
     }
     return (
     <header className="header">

@@ -30,6 +30,7 @@
     left: 47%;
     transform: translate(-40%,-50%);
     width: 400px;
+    height: 350px;
     background-color:white;
     border-radius: 6px;
 }
@@ -43,21 +44,17 @@
    
 }
 .form_feild{
-    padding:30px;
+    padding:0 30px;
     box-sizing: border-box;
     margin: 0 10px;
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center
+    
 }
 
 
 .text_feild{
     position: relative;
     border-bottom: 2px solid;
-    width: 100%;
   
 }
 .text_feild input{

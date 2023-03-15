@@ -32,7 +32,7 @@ export const RegistrationPage = () => {
         });
     const postData = async () => {
         const response = await fetch(
-            "http://localhost:5000/api/v1/users/register",
+            "http://localhost:7600/api/v1/users/register",
             {
                 method: "POST",
                 headers: {
@@ -40,8 +40,8 @@ export const RegistrationPage = () => {
                 },
                 body: JSON.stringify({
                     fullName: fullname,
-                    userName: username,
                     email,
+                    userName: username,
                     password,
                     phoneNumber: phone,
                 }),

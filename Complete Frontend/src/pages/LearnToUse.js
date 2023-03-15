@@ -6,7 +6,7 @@ import './LearnToUse.css'
 import { Rating } from '@mui/material'
 import Card1 from '../components/Card1'
 import './UploadPage.css'
-import '../pages/Homepage.css';
+import './Homepage.css';
 import '../components/Cards.css';
 import { LastBanner } from '../components/LastBanner'
 import Footer from '../components/Footer'

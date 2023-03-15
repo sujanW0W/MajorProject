@@ -43,8 +43,9 @@ const Banner = () => {
             <div className='title'>
               <h1>We use AI technology to restore old photos automatically</h1></div>
             <div className='cards'>
-              {dummy.map((user) => (
+              {dummy.map((user,i) => (
                 <Cards
+                key={i}
                   id={user.id}
                   image={user.image}
                   title={user.title}

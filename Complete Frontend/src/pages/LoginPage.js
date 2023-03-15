@@ -11,9 +11,9 @@ const LoginPage = () => {
     const [newUsername, setUsername] = useState("");
     const [newPassword, setPassword] = useState("");
 
-    const getApi = async () => {
+    const postApi = async () => {
         const response = await fetch(
-            "http://localhost:5000/api/v1/users/login",
+            "http://localhost:7600/api/v1/users/login",
             {
                 method: "POST",
                 headers: {
@@ -27,34 +27,36 @@ const LoginPage = () => {
         );
         const result = await response.json();
         if (result.token) {
+            localStorage.setItem('token',result.token)
             alert("login sucessful");
             // window.location.href='/dashboard'
-            navigate("/dashboard");
+            navigate("/");
         } else {
             alert("Login unsuccessful, Try again !!");
         }
     };
 
-    const getAdminApi = async () => {
-        const response = await fetch("http://localhost:3500/api_login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                newUsername,
-                newPassword,
-            }),
-        });
-        const result = await response.json();
-        if (result.user) {
-            alert("login sucessful");
-            // window.location.href='/dashboard'
-            navigate("/Admin");
-        } else {
-            alert("Login unsuccessful, Try again !!");
-        }
-    };
+    // const getAdminApi = async () => {
+    //     const response = await fetch("http://localhost:7600/api/v1/users/login", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             userName:newUsername,
+    //             password:newPassword,
+    //         }),
+    //     });
+    //     const result = await response.json();
+    //     console.log(result)
+    //     // if (result.user) {
+    //     //     alert("login sucessful");
+    //     //     // window.location.href='/dashboard'
+    //     //     navigate("/Admin");
+    //     // } else {
+    //     //     alert("Login unsuccessful, Try again !!");
+    //     // }
+    // };
 
     const takevalue = () => {
         return {
@@ -75,31 +77,30 @@ const LoginPage = () => {
         event.preventDefault();
         const Datas = takevalue();
         setUser(Datas);
-        getApi();
-
-        console.log(Datas);
+        postApi();
+        //console.log(Datas);
         setPassword("");
         setUsername("");
     };
 
-    const adminsubmithandler = async (event) => {
-        event.preventDefault();
-        const Datas = takevalue();
-        setUser(Datas);
-        setUser(true);
-        getAdminApi();
-        console.log(Datas);
-        // navigate('/admin')
-        setPassword("");
-        setUsername("");
-    };
-    console.log(User);
+    // const adminsubmithandler = async (event) => {
+    //     event.preventDefault();
+    //     const Datas = takevalue();
+    //     setUser(Datas);
+    //     setUser(true);
+    //     getAdminApi();
+    //     console.log(Datas);
+    //     // navigate('/admin')
+    //     setPassword("");
+    //     setUsername("");
+    // };
+   // console.log(User);
 
     return (
         <div>
             <div className="lomain-container">
                 <div className="losubmain-container">
-                    <img src="images/logo.png"></img>
+                    <img src="img/logoColorizer.png" alt=""></img>
                 </div>
                 <h1
                     style={{
@@ -150,13 +151,13 @@ const LoginPage = () => {
                         >
                             Sign In
                         </button>
-                        <button
+                        {/* <button
                             className="lo-sub"
                             onClick={adminsubmithandler}
                             type="submit"
                         >
                             Sign in as Admin
-                        </button>
+                        </button> */}
                         <p style={{ color: "#000", marginTop: "40px" }}>
                             Don't have an account?{" "}
                             <Link to={"/registration"}>Create an account</Link>

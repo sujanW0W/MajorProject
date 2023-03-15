@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Header from '../components/Header'
 import './UploadPage.css'
 import './Homepage.css'
@@ -7,11 +7,17 @@ import videobg from './video/Image Colorizer Introduction _ Colorize Black and W
 import { LastBanner } from '../components/LastBanner'
 import Footer from '../components/Footer'
 import Background2 from "../Images/backtry.jpeg"
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { PathContext } from '../components/UserContext'
 
 
 
 
 export const UploadPage = () => {
+ const {imagePath, setimagePath}=useContext(PathContext);
+  //const [imagePath1, setimagePath1]=useState('');
+  const navigate= useNavigate();
 
   const about = [
     {
@@ -41,15 +47,20 @@ export const UploadPage = () => {
   const [file, setFile] = useState(null); 
   const [fileDataURL, setFileDataURL] = useState(null);
   const [showdiv,setDiv]=useState(false);
+  //const[fileData,setfileData]=useState(null);
 
 
   const changeHandler = (e) => {
     const file = e.target.files[0];
-
     setFile(file)
     setDiv(true)
+
+    // const form = new FormData();
+    // form.append('testImage',file)
+    // setfileData(form)
     
     console.log(file) //yesma files ko sabai detail haru aaucha like format, size, name etc...
+    
     let fileReader=false;
     fileReader = new FileReader(); //FileReader is an API that uses FILE object to read the selected user's files.
     fileReader.onload = (e) => {
@@ -59,6 +70,46 @@ export const UploadPage = () => {
     }
     fileReader.readAsDataURL(file);
   
+  }
+
+  const uploadhandler = async ()=>{
+    // fetch('http://localhost:7600/api/v1/images',{
+    //   method:"POST",
+    //   headers:{
+    //     'Content-Type':'multipart/form-data',
+    //     'authorization':`Bearer ${localStorage.getItem('token')}`
+    //   },
+    //   body:JSON.stringify({
+    //     image:file,
+    //     name: file.name
+    //   })
+    // }).then((resp)=>resp.json()).then((data)=>{
+    //   console.log("Response", data)
+    // })
+       const resp=await axios.post('http://localhost:7600/api/v1/images',
+       {
+        testImage:file,
+        name:file.name
+      }
+       ,
+       {
+        headers:{
+          'Content-type':'multipart/form-data',
+          Authorization:`Bearer ${localStorage.getItem('token')}`
+        }
+       }
+       )
+       
+       console.log(resp)
+       setimagePath(resp.data.filePath);
+
+  }
+
+  const startRestore=()=>{
+   
+    navigate('/restoreImage')
+    console.log(imagePath)
+
   }
 
 
@@ -74,8 +125,8 @@ export const UploadPage = () => {
           <div className='upload-sec' >
             <div className='uploadimage-container'>
               <div className="inner-upload-container">
-                <button className='upload-btn' onClick={uploadfile}> <img className="inner-upload-container" src='img/1.png'></img></button>
-                <input id="select_file" onChange={changeHandler} type="file" className='input-file'  ></input>
+                <button className='upload-btn' onClick={uploadfile}> <img className="inner-upload-container" src='img/1.png' alt=''></img></button>
+                <input id="select_file" onChange={changeHandler} type="file" className='input-file' name="testImage" ></input>
               </div>
 
               <div><h2 style={{ color: "white", marginTop: '20px' }}>Click or Drop Files</h2></div>
@@ -84,16 +135,19 @@ export const UploadPage = () => {
             
             {showdiv?<div className='show_content' >
               
-                <img className='show_imgcontent'  src={fileDataURL}></img>
+                <img className='show_imgcontent'  src={fileDataURL} alt=''></img>
                 <div className='btn-content'>
-                <button className='btn-innercontent'>Start</button></div>
+                <button className='btn-innercontent' onClick={startRestore}>Start</button>
+                <button className='btn-innercontent' onClick={uploadhandler}>Upload</button>
+                </div>
+                
             </div>:<div></div>}
           </div>
         </div>
       </div>
       <div className='sub-container21'>
         <div className='sub-text1'>
-          <img className='sub-text1' src='img/bell.png'></img>
+          <img className='sub-text1' src='img/bell.png' alt=''></img>
         </div>
         <div className='title'>
           <h1 style={{ fontSize: "1vw" }}>Subscribe to our services to colorize large B&W pictures upto 6000px*6000px
@@ -101,8 +155,9 @@ export const UploadPage = () => {
         </div>
         <div className='grid-view1'>
           {
-            about.map((item) => (
+            about.map((item,i) => (
               <Card1
+                key={i} 
                 id={item.id}
                 img={item.img}
                 tit={item.tit}

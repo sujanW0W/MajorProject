@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
-export const UserContext =createContext(null);
+export const PathContext =createContext('');
+export const UserContext=createContext(null);
+

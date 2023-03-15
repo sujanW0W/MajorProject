@@ -1,36 +1,55 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Banner from '../components/Banner'
 import Card1 from '../components/Card1'
 
 import Footer from "../components/Footer"
 import Header from '../components/Header'
 import { LastBanner } from '../components/LastBanner'
+import jwt_decode from 'jwt-decode'
+import { useNavigate } from 'react-router-dom'
+
+
+
 
 
 const Homepage = () => {
+  const navigate=useNavigate();
 
   const about=[
-    {
+    { id:1,
       img:'img/1.png',
       tit:'Image Colorize',
       des:'Image Colorizer is our basic AI feature that could add color to black and white pictures naturally.'
     },
-    {
+    { id:2,
       img:'img/2.png',
       tit:'Image Enhancer',
       des:'Trained by thousand of HD picturem AI Image Enhancer could fix the blurry pittures and make them high definition '
     },
-    {
+    { id:3,
       img:'img/3.png',
       tit:'Face Retouch',
       des:'Neural network system could recognize the face in pictures. Retouch the face without damage the original pictures'
     },
-    {
+    { id:4,
       img:'img/4.png',
       tit:'Damaged Picture Restoration',
       des:'If your old pictures are scratched or damaged, use this feature to restore them without any PhotoShop skills.'
     },
   ]
+   
+
+    useEffect(()=>{
+      const token = localStorage.getItem('token')
+      if(token){
+        const user=jwt_decode(token);
+        console.log(user)
+        if(!user){
+          localStorage.removeItem("token")
+          navigate('/login') 
+        }
+      }
+    })
 
   return (
     <div>
@@ -47,8 +66,9 @@ const Homepage = () => {
           </div>
           <div className='grid-view'>
             { 
-              about.map((item)=>(
-                <Card1
+              about.map((item,i)=>(
+                <Card1 
+                  key={i}
                   img={item.img}
                   tit={item.tit}
                   des={item.des}
@@ -86,7 +106,7 @@ const Homepage = () => {
         </div>
         <div className='sub-container3'>
           <div className='sub-container3-image'>
-            <img className='sub-container3-image' src='img/innerPic.jpeg'></img>
+            <img className='sub-container3-image' src='img/innerPic.jpeg'alt=''></img>
           </div>
           <div className='sub-container3-text'>
             <h1 className='container3-innertext'>
