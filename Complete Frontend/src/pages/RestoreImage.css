@@ -1,0 +1,48 @@
+.restoreOuterDiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restoreInsideDiv{
+    width: 1000px;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    margin-top: 20px;
+}
+
+.restoreButton{
+    padding: 10px 20px;
+    background-color: #565656;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.restoreInsideDiv img{
+    width: 600px;
+    height: 600px;
+}
+
+.downloadAnchor{
+    padding: 10px 20px;
+    background-color: #565656;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.downloadAnchor:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.imageDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}

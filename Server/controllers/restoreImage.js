@@ -1,7 +1,6 @@
 const { spawn } = require("child_process");
 
 const restoreImage = (req, res) => {
-    console.log(req.body);
     const corruptedImagePath = req.body.imagePath;
 
     var restoredImagePath;
@@ -13,7 +12,6 @@ const restoreImage = (req, res) => {
     python.stdout.on("data", function (data) {
         console.log("Processing...");
         restoredImagePath = data.toString();
-        console.log(restoredImagePath);
     });
 
     python.on("close", (code) => {

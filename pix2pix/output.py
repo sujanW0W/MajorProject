@@ -46,7 +46,9 @@ gen_image = (gen_image + 1) / 2.0
 timeSuffix = str(time.time()).replace('.', '-')
 
 image.imsave(
-    f'D:\\MajorProject\\MajorProject\\pix2pix\\{timeSuffix}-result.jpg', gen_image[0])
+    # f'D:\\MajorProject\\MajorProject\\pix2pix\\{timeSuffix}-result.jpg', gen_image[0]
+    f'D:\\MajorProject\\MajorProject\\Complete Frontend\\public\\resultImages\\{timeSuffix}-result.jpg', gen_image[0]
+)
 
 
 # plot the image
@@ -54,4 +56,5 @@ pyplot.imshow(gen_image[0])
 pyplot.axis('off')
 # pyplot.show()
 
-print(f"D:\\MajorProject\\MajorProject\\pix2pix\\{timeSuffix}-result.jpg")
+# print(f"D:/MajorProject/MajorProject/pix2pix/{timeSuffix}-result.jpg")
+print(f"{timeSuffix}-result.jpg")
