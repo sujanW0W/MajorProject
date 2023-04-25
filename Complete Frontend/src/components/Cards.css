@@ -16,14 +16,14 @@
     display: flex;
     flex-direction: column;
     height: 500px;
-    width: 270px;
+    width: 500px;
  
 }
 .image-container{
     border-radius: 4px;
     position: relative;
-    height: 270px;
-    width: 270px;
+    height: 350px;
+    width: 500px;
     overflow: hidden;
 }
 

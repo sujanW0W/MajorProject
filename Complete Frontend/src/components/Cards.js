@@ -21,9 +21,9 @@ export const Cards = (props) => {
         <div className='des-container'>
           <h1>{props.title}
           </h1>
-          <p style={{marginRight:'30px'}}>{props.des}</p>
+          <p style={{marginRight:'50px'}}>{props.des}</p>
           <div className='cards_button'>
-            <button onClick={()=>{navigate('/Upload')}}>Colorize Photo Now </button>
+            <button style={{marginBottom:'5px'}}onClick={()=>{navigate('/Upload')}}>Image Inpaint Now  </button>
           </div>
         </div>
       </div>
