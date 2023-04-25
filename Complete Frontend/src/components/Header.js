@@ -1,8 +1,5 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import SearchIcon from '@mui/icons-material/Search';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
-import InfoIcon from '@mui/icons-material/Info';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
@@ -35,7 +32,7 @@ const Header = () => {
     <header className="header">
         <div className="container flex">
             <div className="logo">
-               <img src="img/logoColorizer.png" className="image" onClick={()=>{navigator('/')}}></img>
+               <img src="img/imageInpainting.png" className="image" onClick={()=>{navigator('/')}}></img>
 
             </div >
             <div className="nav">
@@ -44,11 +41,11 @@ const Header = () => {
                     <li><Link to='/learn'>Learn To Use</Link> </li>
                     <li><Link to='/about'>About</Link></li>
                     
-                    <li className="icons" > 
+                    {/* <li className="icons" > 
                         <SearchIcon  className="HeaderIcon"/>
                         <ContactPageIcon className="HeaderIcon"/>
                          <InfoIcon className="HeaderIcon"/>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
             <button className="nvabar-items-icon" onClick={()=>{setsidebar(!sidebar)}}>{sidebar?<CloseIcon/>:<MenuIcon/>}</button>

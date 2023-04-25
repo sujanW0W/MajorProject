@@ -84,13 +84,13 @@ export const LearnToUse = () => {
                     <Header></Header>
                     <div className='upsub-container'>
                         <div className='upsub-innercontainer'>
-                            <h1 style={{ fontWeight: "900", color: 'black', marginTop: "50px", color: "white" }}>Picture Colorizer</h1>
-                            <p style={{ width: "40%", height: "100px", lineHeightStep: "400px", fontSize: "18px", wordSpacing: "3px", marginTop: "30px", color: "white", textAlign: "center" }}> Picture Colorizer is a Windows and Mac application used for B&W photo colorization and old photo restoration. Allows users to adjust various parameters of the photo and apply filters. Register to remove watermark.</p>
+                            <h1 style={{ fontWeight: "900", color: 'black', marginTop: "50px", color: "white" }}>Image Inpainting</h1>
+                            <p style={{ width: "40%", height: "100px", lineHeightStep: "400px", fontSize: "18px", wordSpacing: "3px", marginTop: "30px", color: "white", textAlign: "center" }}> Image Inpainting  is a  Web application used to restore distored images  and old photo restoration. Allows users to renew images. Register to download the restore image.</p>
                             <Rating name="read-only" value={5} readOnly style={{ marginTop: "20px", width:"150px"}} />
                         </div>
 
-                        <button className='l-btn'><h1>Soon Lunching For Mac And Win</h1></button>
-                        <p style={{ width: "40%", height: "100px", lineHeightStep: "400px", fontSize: "10px", wordSpacing: "3px", marginTop: "30px", color: "white", textAlign: "center" }}> Picture Colorizer 3 will be released on 01/03/2030. With some fantastic features and improved colorization and enhancement workflow. Feature like auto-update feature. Please download and install the 3.0 version in your Mac/Win.</p>
+                        <button className='l-btn'><h1>Make Easy To Restore Using Image Inpainting Application</h1></button>
+                        <p style={{ width: "40%", height: "100px", lineHeightStep: "400px", fontSize: "10px", wordSpacing: "3px", marginTop: "30px", color: "white", textAlign: "center" }}> Image Inpainting Application</p>
                     </div>
                     <div className='grid-view2' style={{ background: "black" }}>
                         {
@@ -105,7 +105,7 @@ export const LearnToUse = () => {
 
                         }
                     </div>
-                    <div className='l-maincontainer3'>
+                    {/* <div className='l-maincontainer3'>
                         <div className='l-submaincontainer'>
                             <div className='l-innercontainer'>
                                 <h1 style={{ color: "white", fontFamily: " Verdana, Geneva, Tahoma, sans-serif" }}>Colorize and enhance black and white photo</h1>
@@ -145,9 +145,9 @@ export const LearnToUse = () => {
 
                         </div>
 
-                    </div>
+                    </div> */}
                     <div className='l-maincontainer4'>
-                        <h1 style={{marginTop:"100px",color:"white"}}>Highlights Features</h1>
+                        <h1 style={{marginTop:"100px",color:"white"}}>Future Highlights Features</h1>
                         <div className='grid-view3'>
                             {
                                 content2.map((item1)=>(

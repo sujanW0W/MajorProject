@@ -60,6 +60,7 @@ h3{
 }
 .cards{
     width: 80%;;
+   
     border: none;
     position: absolute;
     top: 700px;
@@ -68,6 +69,8 @@ h3{
     margin-top:40px ;
     overflow: hidden;
     z-index: 7;
+    align-items: center;
+    justify-content: center;
    
 }
 

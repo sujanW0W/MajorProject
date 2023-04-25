@@ -13,7 +13,7 @@ const LoginPage = () => {
 
     const postApi = async () => {
         const response = await fetch(
-            "http://localhost:5000/api/v1/users/login",
+            "http://localhost:7600/api/v1/users/login",
             {
                 method: "POST",
                 headers: {
@@ -27,7 +27,7 @@ const LoginPage = () => {
         );
         const result = await response.json();
         if (result.token) {
-            localStorage.setItem("token", result.token);
+            localStorage.setItem('token',result.token)
             alert("login sucessful");
             // window.location.href='/dashboard'
             navigate("/");
@@ -94,7 +94,7 @@ const LoginPage = () => {
     //     setPassword("");
     //     setUsername("");
     // };
-    // console.log(User);
+   // console.log(User);
 
     return (
         <div>
