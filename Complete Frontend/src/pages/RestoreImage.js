@@ -1,5 +1,7 @@
-import React from "react";
+import React from 'react'
 
 export const RestoreImage = () => {
-    return <div>RestoreImage</div>;
-};
+  return (
+    <div>RestoreImage</div>
+  )
+}

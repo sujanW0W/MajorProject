@@ -15,21 +15,21 @@ export const About = () => {
         {
             img: 'img/16.png',
             bg: '#68d484',
-            tit: 'Colorize',
-            des: 'Based on AI technology, you can colorize the black and white photos on your mobile phones.'
+            tit: 'Resotre',
+            des: 'Based on AI technology, you can restore damaged images on your mobile phones.'
         },
-        {
-            img: 'img/17.png',
-            bg: '#463af0',
-            tit: 'Enhance',
-            des: 'Colorize! is a great app to unblur and sharpen your old blurry pictures. Make old photo crisper!'
-        },
-        {
-            img: 'img/18.png',
-            bg: '#f74b4a',
-            tit: 'Re-Touch',
-            des: 'Colorize! app also includes powerful retouching technology to detect your face and retouch for better looking.'
-        }
+        // {
+        //     img: 'img/17.png',
+        //     bg: '#463af0',
+        //     tit: 'Enhance',
+        //     des: 'Colorize! is a great app to unblur and sharpen your old blurry pictures. Make old photo crisper!'
+        // },
+        // {
+        //     img: 'img/18.png',
+        //     bg: '#f74b4a',
+        //     tit: 'Re-Touch',
+        //     des: 'Colorize! app also includes powerful retouching technology to detect your face and retouch for better looking.'
+        // }
 
     ];
     const content2 = [
@@ -77,9 +77,9 @@ export const About = () => {
                 <div className='upmain'>
                     <Header></Header>
                     <div className='ab-container'>
-                        <h1 style={{ color: 'white', fontSize: '3.5vw', fontWeight: "900", marginTop: "120px", color: "white" }}><b>Colorizer!!</b>
+                        <h1 style={{ color: 'white', fontSize: '3.5vw', fontWeight: "900", marginTop: "120px", color: "white" }}><b>Image Inpainting!!</b>
                         </h1>
-                        <p style={{ width: "50%", height: "100px", lineHeightStep: "500px", fontSize: "18px", wordSpacing: "3px", marginTop: "30px", color: "white", textAlign: "center" }}>Looking for the best picture colorizer application to restore old photo on phones? Try our online Application  - "Colorize!" and colourize your old black and white pictures instantly. No Photoshop skills required and it is easiest way to neutralize the color for beginners. Download restore and enhanced and use it for 100% free!
+                        <p style={{ width: "50%", height: "100px", lineHeightStep: "500px", fontSize: "18px", wordSpacing: "3px", marginTop: "30px", color: "white", textAlign: "center" }}>Looking for the best image restoration application to restore old images on phones? Try our online Application  - "Image Inpainting!" and restore your old damaged pictures instantly. No Photoshop skills required and it is easiest way to neutralize the color for beginners.
                         </p>
                         <Rating name="read-only" value={5} readOnly style={{ marginTop: "20px", width:'150px'}} />
 
@@ -116,15 +116,15 @@ export const About = () => {
                         <div className='ab-subinnerDiv'>
                             <div className='seq-img'><img className='seq-img' src='img/20.png'></img></div>
                             <div>
-                                <h1 style={{ fontSize: '22px', fontWeight: '900' }}>Install Colorize! app and upload</h1>
-                                <p style={{ color: 'rgb(196, 196, 196)' }}>Search "Colorize!" in any webprotal to find the online application. Add one old picture you love.</p>
+                                <h1 style={{ fontSize: '22px', fontWeight: '900' }}>Open Image Inpainting web app and upload</h1>
+                                <p style={{ color: 'rgb(196, 196, 196)' }}>Search "Image Inpainting" in any webprotal to find the online application. Add distored image you wamt to restore.</p>
                             </div>
                         </div>
                         <div className='ab-subinnerDiv'>
                             <div className='seq-img'><img className='seq-img' src='img/21.png'></img></div>
                             <div>
                                 <h1 style={{ fontSize: '22px' }}>Use Powerful Features</h1>
-                                <p style={{ color: 'rgb(196, 196, 196)' }}>We provide three main features. Colorize, Enhance, Retouch. Choose the best one for perfect end result.</p>
+                                <p style={{ color: 'rgb(196, 196, 196)' }}>We provide AI feature to restore your images. Upload  the image and within a second you have your resutls.</p>
                             </div>
                         </div>
                         <div className='ab-subinnerDiv'>

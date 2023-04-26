@@ -64,10 +64,10 @@ const Footer = () => {
                             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    <i className="fas fa-gem me-3"></i>Image Colorizer
+                                    <i className="fas fa-gem me-3"></i>Image Inpainting 
                                 </h6>
                                 <p>
-                                Color in certain places has the great value of making the outlines and structural planes seem more energetic.
+                                Restoration in certain places has the great value of making the outlines and structural planes seem more energetic.
                                 </p>
                             </div>
 
@@ -79,13 +79,13 @@ const Footer = () => {
                                     Products
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Colorize!</a>
+                                    <a href="#!" className="text-reset">Inpainting!</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Retouch</a>
+                                    <a href="#!" className="text-reset"></a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Enhance</a>
+                                    <a href="#!" className="text-reset"></a>
                                 </p>
                                 <p>
                                     <a href="#!" className="text-reset">Repair!</a>
@@ -101,7 +101,7 @@ const Footer = () => {
                                     <a href="#!" className="text-reset">Online Service</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">For Win/Mac</a>
+                                    <a href="#!" className="text-reset">For mac/win</a>
                                 </p>
                                 <p>
                                     <a href="#!" className="text-reset">For ios/Android</a>
@@ -114,10 +114,10 @@ const Footer = () => {
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     Contact
                                 </h6>
-                                <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                                <p><i className="fas fa-home me-3"></i> Lalitpur, chakupat 10012, US</p>
                                 <p>
                                     <i className="fas fa-envelope me-3"></i>
-                                    info@example.com
+                                    infohcoe.edu.np
                                 </p>
                                 <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
                                 <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
@@ -131,7 +131,7 @@ const Footer = () => {
                 </section>
                 <div className="text-center p-4" style={footer1}>
                     © 2021 Copyright: 
-                     <a className="text-reset fw-bold" href="https://mdbootstrap.com/">imageColorizer.com</a></div>
+                     <a className="text-reset fw-bold" href="https://mdbootstrap.com/">imageInpainting.com</a></div>
             </footer >
            
         </div >
